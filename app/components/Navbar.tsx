@@ -12,7 +12,7 @@ const Navbar = () => {
         <ul className='flex items-center justify-evenly gap-20'>
             {
                 menu.map((link , i)=>(
-                    <li className={`text-2xl font-semibold ${pathname === link.path ? 'text-[#FF8100]' : 'text-slate-900'}`}>{link.name}</li>
+                    <li key={i} className={`text-2xl font-semibold ${pathname === link.path ? 'text-[#FF8100]' : 'text-slate-900'}`}>{link.name}</li>
                 ))
             }
         </ul>
