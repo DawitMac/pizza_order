@@ -3,25 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-gradient-to-r: linear-gradient(to right, #FF8100, #FFBE71);
+  --bg-clip-text: text;
+  --text-transparent: transparent;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.text-gradient {
+  background: var(--bg-gradient-to-r);
+  -webkit-background-clip: var(--bg-clip-text);
+  background-clip: var(--bg-clip-text);
+  color: var(--text-transparent);
+}
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
 }
