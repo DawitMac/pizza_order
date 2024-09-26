@@ -8,7 +8,7 @@ export const menu = [
         path : "/orders"
     },
     {
-        name : "who We are",
+        name : "About Us",
         path : "/about"
     }
 ]
@@ -97,4 +97,28 @@ export const topPizzas = [
         restaurant : "Azmera Pizza"
 
       },
+]
+
+export const featured = [
+  {
+    title : "Make Your First Order and Get" ,
+    strong : "50% Off",
+    info : "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without.",
+    background : "#2F2F2F",
+    img : "/featured1.png"
+  },
+  {
+    title : "Make Your First Order and Get" ,
+    strong : "50% Off",
+    info : "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without.",
+    background : "#50482B",
+    img : "/featured1.png"
+  },
+  {
+    title : "Make Your First Order and Get" ,
+    strong : "50% Off",
+    info : "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without.",
+    background : "#296D60",
+    img : "/featured1.png"
+  },
 ]

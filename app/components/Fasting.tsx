@@ -4,12 +4,13 @@ import React from 'react'
 
 const Fasting = () => {
   return (
-    <div className='flex flex-col items-start justify-center p-8 bg-gradient-to-b from-[#FFF8F1] via-[#FFC993] to-[#FFF8F1] px-20 gap-6'>
-        <p className='text-5xl text-black/50'>Popular Pizzas</p>
-        <div className='grid grid-rows-2 gap-[25px]'>
-            {
+    <section className='bg-gradient-to-b from-[#FFF8F1] via-[#FFC993] to-[#FFF8F1] md:px-20 px-10 pb-20'>
+      <h1 className='text-5xl text-black/50 py-10'>Fasting</h1>
+      <div className=' flex gap-6 overflow-x-auto hide-scrollbar'>
+      <div className='relative flex items-center justify-start gap-6'>
+      {
                 topPizzas.map((pizza , i)=>(
-                    <div key={i} className='bg-white p-[30px] rounded-[25px]'>
+                    <div key={i} className='bg-white p-[30px] w-[300px] rounded-[25px]'>
                       <div className='p-2 flex items-center justify-center bg-[#EA810033] rounded-full'>
                         <Image src={pizza.img} alt='pizza' width={272} height={276} />
                       </div>
@@ -29,8 +30,9 @@ const Fasting = () => {
                     </div>
                 ))
             }
-        </div>
+      </div>
     </div>
+    </section>
   )
 }
 

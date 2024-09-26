@@ -4,8 +4,9 @@ import React from 'react';
 
 const TopRestaurants = () => {
   return (
-    <div className=' flex flex-col items-start justify-center h-[100dvh] bg-gradient-to-b from-[#FFF8F1] via-[#FFC993] to-[#FFF8F1] px-20 gap-6 overflow-x-auto hide-scrollbar'>
-      <h1 className='text-5xl text-black/50'>Top Restaurants</h1>
+    <section className='bg-gradient-to-b from-[#FFF8F1] via-[#FFC993] to-[#FFF8F1] md:px-20 px-10 h-[100dvh] '>
+      <h1 className='text-5xl text-black/50 py-20'>Top Restaurants</h1>
+      <div className=' flex gap-6 overflow-x-auto hide-scrollbar'>
       <div className='relative flex items-center justify-start gap-6'>
         {topRestaurants.map((restaurant, i) => (
           <div key={i} className='flex w-[574px] h-[154px] p-4 gap-6 rounded-lg bg-white'>
@@ -29,6 +30,7 @@ const TopRestaurants = () => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
 

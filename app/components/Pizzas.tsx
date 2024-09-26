@@ -4,9 +4,9 @@ import React from 'react'
 
 const Pizzas = () => {
   return (
-    <div className='flex flex-col items-start justify-center p-8 bg-gradient-to-b from-[#FFF8F1] via-[#FFC993] to-[#FFF8F1] px-20 gap-6'>
-        <p className='text-5xl text-black/50'>Popular Pizzas</p>
-        <div className='grid grid-cols-3 gap-[25px]'>
+    <div className='flex flex-col items-center justify-center p-8 bg-gradient-to-b from-[#FFF8F1] via-[#FFC993] to-[#FFF8F1] md:px-20 gap-6'>
+        <p className='text-5xl text-black/50 py-10 w-full flex items-start justify-start'>Popular Pizzas</p>
+        <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[25px]'>
             {
                 topPizzas.map((pizza , i)=>(
                     <div key={i} className='bg-white p-[30px] rounded-[25px]'>
