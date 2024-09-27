@@ -6,9 +6,9 @@ import { useEffect, useRef, useState } from "react";
 const colors = ["#0088FE", "#00C49F", "#FFBB28"];
 const delay = 3000;
 
-function Feautred() {
+function Featured() {
   const [index, setIndex] = useState(0);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -18,32 +18,31 @@ function Feautred() {
 
   useEffect(() => {
     resetTimeout();
-    timeoutRef.current = setTimeout(
-      () =>
-        setIndex((prevIndex) =>
-          prevIndex === colors.length - 1 ? 0 : prevIndex + 1
-        ),
-      delay
-    );
+    timeoutRef.current = setTimeout(() => {
+      setIndex((prevIndex) =>
+        prevIndex === colors.length - 1 ? 0 : prevIndex + 1
+      );
+    }, delay);
+
     return () => {
       resetTimeout();
     };
   }, [index]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen sm:w-[98dvw] w-screen overflow-hidden gap-10 bg-[#FFF8F1]">
+    <div className="flex flex-col items-center justify-center h-screen sm:w-[98vw] w-screen overflow-hidden gap-10 bg-[#FFF8F1]">
       <div
-        className=" flex items-center justify-center md:gap-16  sm:gap-8 gap-5  transition-all duration-1000  sm:px-3 px-10"
-        style={{ transform: `translate3d(${index == 2 ? -100 :  Math.abs(-index * 100)}vw, 0, 0)` }}
+        className="flex items-center justify-center md:gap-16 sm:gap-8 gap-5 transition-all duration-1000 sm:px-3 px-10"
+        style={{ transform: `translate3d(${index === 2 ? -100 : Math.abs(-index * 100)}vw, 0, 0)` }}
       >
-        {featured.map((feature, index) => (
+        {featured.map((feature, idx) => (
           <div
-            className="flex sm:flex-row flex-col items-center justify-between pl-10 gap-y-10 h-[100%] w-[95dvw] rounded-[40px]"
-            key={index}
+            className="flex sm:flex-row flex-col items-center justify-between pl-10 gap-y-10 h-[100%] w-[95vw] rounded-[40px]"
+            key={idx}
             style={{ backgroundColor: feature.background }}
           >
             <div className="flex flex-col items-start justify-start gap-10 md:py-10 sm:py-20 py-10">
-              <span className="flex items-center justify-start text-3xl font-semibold text-white whitespace-wrap ">
+              <span className="flex items-center justify-start text-3xl font-semibold text-white whitespace-wrap">
                 <p>{feature.title}</p>
                 <p className="text-[#FF9921]">{feature.strong}</p>
               </span>
@@ -59,7 +58,7 @@ function Feautred() {
         {colors.map((color, idx) => (
           <div
             key={idx}
-            className={`h-[20px] w-[20px] rounded-full cursor-pointer mt-15 mr-7 mb-0 transition-all duration-1000 ${index == idx ? 'bg-[#FF9921]' : 'bg-gray-300'}`}
+            className={`h-[20px] w-[20px] rounded-full cursor-pointer mt-15 mr-7 mb-0 transition-all duration-1000 ${index === idx ? 'bg-[#FF9921]' : 'bg-gray-300'}`}
             onClick={() => {
               setIndex(idx);
             }}
@@ -70,6 +69,4 @@ function Feautred() {
   );
 }
 
-export default Feautred;
-
-//${index == 2 ? -100 :  Math.abs(-index * 100)}
+export default Featured;
