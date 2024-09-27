@@ -16,8 +16,8 @@ const Hero = () => {
         </div>
       </div>
       <div className='sm:flex item-center justify-center h-[650px] w-[400px] hidden'>
-         <Image src="/image (2).png" alt="hero" width={794} height={806} priority={false} className='absolute z-10 w-[30%] right-0 '/>  
-         <Image src="/image.png" alt='pizza_ingredient' width={214} height={239} className='absolute rotate-[-30deg] top-[10%] left-[60%] ' />
+         <Image src="/hero.png" alt="hero" width={794} height={806} priority={false} className='absolute z-10 w-[30%] right-0 '/>  
+         <Image src="/leaf1.png" alt='pizza_ingredient' width={214} height={239} className='absolute rotate-[-30deg] top-[10%] left-[60%] ' />
       <Image src="/leaf2.png" alt='pizza_ingredient' width={214} height={239} className='absolute rotate-[0deg] bottom-[5%] right-[20%] z-0 ' />
       </div>
       
